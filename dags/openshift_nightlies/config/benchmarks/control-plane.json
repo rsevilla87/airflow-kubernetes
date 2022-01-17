@@ -5,37 +5,18 @@
             "workload": "scale-perf",
             "command": "./run_scale_fromgit.sh",
             "env": {
-                "SCALE": "25",
+                "SCALE": "27",
                 "METADATA_COLLECTION": "false",
                 "WORKLOAD_NODE_ROLE": "workload"
             }
         },
         {
-            "name": "cluster_density",
-            "workload": "kube-burner",
-            "command": "./run_clusterdensity_test_fromgit.sh",
-            "env": {
-                "JOB_ITERATIONS": "500",
-                "JOB_TIMEOUT": "18000",
-                "STEP_SIZE": "30s",
-                "QPS": "20",
-                "BURST": "20",
-                "METRICS_PROFILE": "metrics-aggregated.yaml",
-                "LOG_LEVEL": "info",
-                "LOG_STREAMING": "true",
-                "CLEANUP_WHEN_FINISH": "true",
-                "CLEANUP": "true",
-                "MUST_GATHER_EACH_TASK": "false",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
-            }
-        },
-        {
-            "name": "node_density",
+            "name": "node-density",
             "workload": "kube-burner",
             "command": "./run_nodedensity_test_fromgit.sh",
             "env": {
                 "PODS_PER_NODE": "250",
-                "NODE_COUNT": "25",
+                "NODE_COUNT": "27",
                 "JOB_TIMEOUT": "18000",
                 "QPS": "20",
                 "BURST": "20",
@@ -50,17 +31,37 @@
             }
         },
         {
-            "name": "scale_100",
+            "name": "node-density-heavy",
+            "workload": "kube-burner",
+            "command": "./run_nodedensity-heavy_test_fromgit.sh",
+            "env": {
+                "PODS_PER_NODE": "250",
+                "NODE_COUNT": "27",
+                "JOB_TIMEOUT": "18000",
+                "QPS": "20",
+                "BURST": "20",
+                "STEP_SIZE": "30s",
+                "METRICS_PROFILE": "metrics.yaml",
+                "LOG_LEVEL": "info",
+                "LOG_STREAMING": "true",
+                "CLEANUP_WHEN_FINISH": "true",
+                "CLEANUP": "true",
+                "MUST_GATHER_EACH_TASK": "false",
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+			}
+		},
+        {
+            "name": "scale_120",
             "workload": "scale-perf",
             "command": "./run_scale_fromgit.sh",
             "env": {
-                "SCALE": "100",
+                "SCALE": "120",
                 "METADATA_COLLECTION": "false",
                 "WORKLOAD_NODE_ROLE": "workload"
             }
         },
         {
-            "name": "cluster_density_100",
+            "name": "cluster-density-1k",
             "workload": "kube-burner",
             "command": "./run_clusterdensity_test_fromgit.sh",
             "env": {
@@ -79,17 +80,17 @@
             }
         },
         {
-            "name": "scale_250",
+            "name": "scale_252",
             "workload": "scale-perf",
             "command": "./run_scale_fromgit.sh",
             "env": {
-                "SCALE": "250",
+                "SCALE": "252",
                 "METADATA_COLLECTION": "false",
                 "WORKLOAD_NODE_ROLE": "workload"
             }
 		},
         {
-            "name": "cluster_density_2000",
+            "name": "cluster-density-2k",
             "workload": "kube-burner",
             "command": "./run_clusterdensity_test_fromgit.sh",
             "env": {
@@ -108,7 +109,7 @@
             }
         },
         {
-            "name": "cluster_density_4000_250",
+            "name": "cluster-density-4k-252",
             "workload": "kube-burner",
             "command": "./run_clusterdensity_test_fromgit.sh",
             "env": {
@@ -127,17 +128,17 @@
             }
 		},
         {
-            "name": "scale_500",
+            "name": "scale_501",
             "workload": "scale-perf",
             "command": "./run_scale_fromgit.sh",
             "env": {
-                "SCALE": "500",
+                "SCALE": "501",
                 "METADATA_COLLECTION": "false",
                 "WORKLOAD_NODE_ROLE": "workload"
             }
 		},
         {
-            "name": "cluster_density_4000_500",
+            "name": "cluster-density-4k-501",
             "workload": "kube-burner",
             "command": "./run_clusterdensity_test_fromgit.sh",
             "env": {
