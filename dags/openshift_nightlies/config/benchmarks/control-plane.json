@@ -105,7 +105,8 @@
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "false",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }",
+				"INDEXING": "false"
             }
         },
         {
@@ -124,7 +125,8 @@
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "false",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }",
+				"INDEXING": "false"
             }
 		},
         {
@@ -153,7 +155,8 @@
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "false",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }",
+				"INDEXING": "false"
             }
         }
    ]
