@@ -1,0 +1,8 @@
+- name: Install-platform
+  script: install.sh
+  trigger_rule: all_success
+  retries: 1
+- name: Install-platform-again
+  script: install.sh
+  trigger_rule: all_success
+  retries: 1
