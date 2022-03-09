@@ -7,6 +7,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.config_templates.airflow_local_settings import LOG_FORMAT
+from util import var_loader
 
 # Set Task Logger to INFO for better task logs
 log = logging.getLogger("airflow.task")
@@ -49,19 +50,22 @@ def _load_tasks(task_file):
     return tasks
 
 
-def set_tasks(tasks_files):
+def set_tasks(dag_name, tasks_files):
     def add_tasks(tasks, parent=None):
         for task in tasks:
             if "remote_script" in task:
                 bash_command = f"curl -L {task['remote_script']} | bash"
             else:
                 bash_command = f"{root_dag_dir}/scripts/{task['script']}"
+            # Get task variables from a nested dict within the dict dict
+            env = var_loader.get_secret(dag_name).get(task['name'], {})
             t = BashOperator(task_id=task['name'],
                              depends_on_past=False,
                              bash_command=bash_command,
                              retries=task['retries'],
                              trigger_rule=task.get('trigger_rule', 'all_success'),
                              start_date=datetime(2021, 1, 1),
+                             env=env
                              )
             if parent:
                 t.set_upstream(parent)
@@ -79,5 +83,5 @@ for dag_config in get_dags():
              catchup=False,
              max_active_runs=1,
              start_date=datetime.now()) as dag:
-        set_tasks(dag_config['tasks'])
+        set_tasks(dag_config['name'], dag_config['tasks'])
         globals()[dag_config['name']] = dag
