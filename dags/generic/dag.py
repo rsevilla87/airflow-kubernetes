@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.config_templates.airflow_local_settings import LOG_FORMAT
-from util import var_loader
+from generic.util import var_loader
 
 # Set Task Logger to INFO for better task logs
 log = logging.getLogger("airflow.task")
@@ -57,12 +57,15 @@ def set_tasks(dag_name, tasks_files):
                 bash_command = f"curl -L {task['remote_script']} | bash"
             else:
                 bash_command = f"{root_dag_dir}/scripts/{task['script']}"
+            env = task.get("vars", {})
             # Get task variables from a nested dict within the dict dict
-            env = var_loader.get_secret(dag_name).get(task['name'], {})
+            # and override task variables from secret vars
+            #env.update(var_loader.get_secret(dag_name).get(task['name'], {}))
+            env.update(var_loader.get_secret(dag_name).get(task['name']))
             t = BashOperator(task_id=task['name'],
                              depends_on_past=False,
                              bash_command=bash_command,
-                             retries=task['retries'],
+                             retries=task.get("retries", 1),
                              trigger_rule=task.get('trigger_rule', 'all_success'),
                              start_date=datetime(2021, 1, 1),
                              env=env

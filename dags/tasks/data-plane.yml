@@ -1,0 +1,12 @@
+- name: Install-platform
+  script: install.sh
+  vars:
+    foo: bar
+  retries: 1
+  sub_tasks:
+  - name: scale-up
+    remote_script: scale-up.sh
+    trigger_rule: all_success
+  - name: node-density
+    script: run.sh
+    trigger_rule: all_success

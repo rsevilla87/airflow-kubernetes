@@ -1,16 +1,16 @@
-- name: foo
+- name: AWS-4.10-control-plane
   vars:
     one: two
   scheduler:
     enable: true
     interval: "0 12 * * 1,3,5"
   tasks:
-  - foo.yml
-- name: bar
+  - control-plane.yml
+- name: AWS-4.10-data-plane
   vars:
     three: four
   scheduler:
     enable: true
     interval: "0 12 * * 1,3,5"
   tasks: 
-  - bar.yml
+  - data-plane.yml
