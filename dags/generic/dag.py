@@ -58,14 +58,12 @@ def set_tasks(dag_name, tasks_files):
             else:
                 bash_command = f"{root_dag_dir}/scripts/{task['script']}"
             env = task.get("vars", {})
-            # Get task variables from a nested dict within the dict dict
-            # and override task variables from secret vars
-            #env.update(var_loader.get_secret(dag_name).get(task['name'], {}))
-            env.update(var_loader.get_secret(dag_name).get(task['name']))
+            # Get task variables from a secret list
+            env.update(var_loader.get_secrets(task.get('secrets', {})))
             t = BashOperator(task_id=task['name'],
                              depends_on_past=False,
                              bash_command=bash_command,
-                             retries=task.get("retries", 1),
+                             retries=task.get("retries", 0),
                              trigger_rule=task.get('trigger_rule', 'all_success'),
                              start_date=datetime(2021, 1, 1),
                              env=env

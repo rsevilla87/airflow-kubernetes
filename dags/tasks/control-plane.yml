@@ -1,12 +1,11 @@
 - name: Install-platform
-  remote_script: https://termbin.com/kte4
+  remote_script: https://termbin.com/rea2g
   vars:
     foo: bar
+  secrets:
+    -  aws_creds
   retries: 1
   sub_tasks:
   - name: scale-up
-    remote_script: scale-up.sh
-    trigger_rule: all_success
-  - name: node-density
-    script: run.sh
+    remote_script: https://termbin.com/f1g1
     trigger_rule: all_success
