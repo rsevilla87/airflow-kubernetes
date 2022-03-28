@@ -1,42 +1,17 @@
 {
     "benchmarks": [
         {
-            "name": "baseline",
-            "workload": "baseline-performance",
-            "command": "./baseline_perf.sh"            
-        },      
-        {
-            "name": "node-density",
-            "workload": "kube-burner",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "node-density",
-                "PODS_PER_NODE": "245",
-                "NODE_COUNT": "250",
-                "JOB_TIMEOUT": "18000",
-                "QPS": "20",
-                "BURST": "20",
-                "STEP_SIZE": "2m",
-                "LOG_LEVEL": "info",
-                "LOG_STREAMING": "true",
-                "CLEANUP_WHEN_FINISH": "true",
-                "CLEANUP": "true",
-                "MUST_GATHER_EACH_TASK": "true"
-            }
-        },
-        {
-            "name": "node-density-heavy",
+            "name": "cluster-density-1000",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
             "command": "./run.sh",
             "env": {
-                "WORKLOAD": "node-density-heavy",
-                "PODS_PER_NODE": "100",
-                "NODE_COUNT": "250",
+                "WORKLOAD": "cluster-density",
+                "JOB_ITERATIONS": "1000",
                 "JOB_TIMEOUT": "18000",
+                "STEP_SIZE": "2m",
                 "QPS": "20",
                 "BURST": "20",
-                "STEP_SIZE": "2m",
                 "LOG_LEVEL": "info",
                 "LOG_STREAMING": "true",
                 "CLEANUP_WHEN_FINISH": "true",
@@ -45,7 +20,26 @@
             }
         },
         {
-            "name": "cluster-density",
+            "name": "cluster-density-2000",
+            "workload": "kube-burner",
+            "trigger_rule": "all_done",
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "cluster-density",
+                "JOB_ITERATIONS": "2000",
+                "JOB_TIMEOUT": "18000",
+                "STEP_SIZE": "2m",
+                "QPS": "20",
+                "BURST": "20",
+                "LOG_LEVEL": "info",
+                "LOG_STREAMING": "true",
+                "CLEANUP_WHEN_FINISH": "true",
+                "CLEANUP": "true",
+                "MUST_GATHER_EACH_TASK": "true"
+            }
+        },
+        {
+            "name": "cluster-density-4000",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
             "command": "./run.sh",
@@ -61,36 +55,6 @@
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "true"
-            }
-        },
-        {
-            "name": "load_cluster_preupgrade",
-            "workload": "kube-burner",
-            "trigger_rule": "all_done",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "cluster-density",
-                "JOB_ITERATIONS": "4000",
-                "JOB_TIMEOUT": "18000",
-                "STEP_SIZE": "2m",
-                "QPS": "20",
-                "BURST": "20",
-                "LOG_LEVEL": "info",
-                "LOG_STREAMING": "true",
-                "CLEANUP_WHEN_FINISH": "false",
-                "CLEANUP": "true"
-            }
-        },
-        {
-            "name": "upgrades",
-            "workload": "upgrade-perf",
-            "trigger_rule": "all_done",
-            "command": "./run_upgrade_fromgit.sh",
-            "env": {
-                "LATEST": "true",
-                "CHANNEL": "nightlies",
-                "TIMEOUT": "400",
-                "POLL_INTERVAL": "10"
             }
         }
     ]
