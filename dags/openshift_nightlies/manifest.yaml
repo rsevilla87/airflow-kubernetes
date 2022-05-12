@@ -23,7 +23,7 @@ dagConfig:
     tag: 2.3.0
   dependencies:
     e2e_benchmarking:
-      repo: https://github.com/rsevilla87/e2e-benchmarking/pull/new/ovn-fix
+      repo: https://github.com/rsevilla87/e2e-benchmarking.git
       branch: ovn-fix
 
 platforms:
