@@ -6,14 +6,14 @@
             "command": "./ingress-performance.sh",
             "env": {
                 "LARGE_SCALE_THRESHOLD": "19",
-                "TERMINATIONS": "mix",
                 "ENGINE": "local",
+                "METADATA_COLLECTION": "false",
                 "LARGE_SCALE_ROUTES": "500",
-                "COMPARE": "false",
                 "EMAIL_ID_FOR_RESULTS_SHEET": "msheth@redhat.com",
                 "GSHEET_KEY_LOCATION": "/tmp/key.json",
                 "LARGE_SCALE_CLIENTS": "1 10 20",
-                "LARGE_SCALE_CLIENTS_MIX": "1 5 10"
+                "LARGE_SCALE_CLIENTS_MIX": "1 5 10",
+                "QUIET_PERIOD": "30s"
             }
         }
     ]
