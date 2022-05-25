@@ -11,9 +11,12 @@
                 "LARGE_SCALE_ROUTES": "500",
                 "EMAIL_ID_FOR_RESULTS_SHEET": "msheth@redhat.com",
                 "GSHEET_KEY_LOCATION": "/tmp/key.json",
-                "LARGE_SCALE_CLIENTS": "1 10 20",
-                "LARGE_SCALE_CLIENTS_MIX": "1 5 10",
-                "QUIET_PERIOD": "30s"
+                "LARGE_SCALE_CLIENTS": "20 40",
+                "LARGE_SCALE_CLIENTS_MIX": "5 10",
+                "SAMPLES": "4",
+                "RUNTIME": "30",
+                "QUIET_PERIOD": "30",
+                "TERMINATIONS": "edge mix"
             }
         }
     ]
