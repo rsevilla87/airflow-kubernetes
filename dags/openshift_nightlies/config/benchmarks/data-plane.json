@@ -1,31 +1,6 @@
 {
     "benchmarks": [
         {
-            "name": "host-network",
-            "workload": "network-perf",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "hostnet",
-                "PAIRS": "1"
-            }
-        },
-        {
-            "name": "pod-network",
-            "workload": "network-perf",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "pod2pod"
-            }
-        },
-        {
-            "name": "serviceip-network",
-            "workload": "network-perf",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "pod2svc"
-            }
-        },
-        {
             "name": "scale-27",
             "workload": "scale-perf",
             "command": "./run_scale_fromgit.sh",
