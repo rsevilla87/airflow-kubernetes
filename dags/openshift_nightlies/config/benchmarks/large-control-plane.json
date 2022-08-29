@@ -48,28 +48,6 @@
                 "CLEANUP_TIMEOUT": "2h",
                 "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
             }
-        },
-        {
-            "name": "node-density",
-            "workload": "kube-burner",
-            "trigger_rule": "all_done",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "node-density",
-                "PODS_PER_NODE": "245",
-                "NODE_COUNT": "252",
-                "JOB_TIMEOUT": "18000",
-                "QPS": "20",
-                "BURST": "20",
-                "STEP_SIZE": "2m",
-                "LOG_LEVEL": "info",
-                "CLEANUP_WHEN_FINISH": "true",
-                "CLEANUP": "true",
-                "MUST_GATHER_EACH_TASK": "true",
-                "CLEANUP_TIMEOUT": "2h",
-                "METRICS_PROFILE": "metrics-profiles/metrics-aggregated.yaml",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
-            }
         }
     ]
 }
