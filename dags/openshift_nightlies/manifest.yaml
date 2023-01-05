@@ -30,7 +30,7 @@ platforms:
 
   # Do not program concurrent builds of ROSA/ROGCP/ARO
   rosa:
-    versions: ["4.11", "4.12"]
+    versions: ["4.12"]
     variants:
       - name: sts-ovn-control-plane
         schedule: "10 12 * * 3"
