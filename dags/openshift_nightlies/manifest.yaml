@@ -32,13 +32,23 @@ platforms:
   rosa:
     versions: ["4.12"]
     variants:
-      - name: sts-ovn-control-plane
+      - name: ovn-control-plane-s
         schedule: "10 12 * * 3"
         config:
-          install: rosa/ovn.json
-          benchmarks: control-plane-baseline.json
-      - name: sts-ovn-data-plane
-        schedule: "15 12 * * 1"
+          install: rosa/ovn-s.json
+          benchmarks: control-plane-baseline-s.json
+      - name: ovn-control-plane-m
+        schedule: "10 12 * * 3"
         config:
-          install: rosa/ovn.json
-          benchmarks: data-plane.json
+          install: rosa/ovn-m.json
+          benchmarks: control-plane-baseline-m.json
+      - name: ovn-control-plane-l
+        schedule: "10 12 * * 3"
+        config:
+          install: rosa/ovn-l.json
+          benchmarks: control-plane-baseline-l.json
+      - name: ovn-control-plane-xl
+        schedule: "10 12 * * 3"
+        config:
+          install: rosa/ovn-xl.json
+          benchmarks: control-plane-baseline-xl.json
