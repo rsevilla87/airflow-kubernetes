@@ -212,6 +212,8 @@ setup(){
             sudo mv rosa /usr/local/bin/
             popd
         fi
+        sudo curl -L https://github.com/openshift/rosa/releases/download/v1.2.10/rosa-linux-amd64 -o /usr/local/bin/rosa
+        sudo chmod +x /usr/local/bin/rosa
         ocm login --url=https://api.stage.openshift.com --token="${ROSA_TOKEN}"
         ocm whoami
         rosa login --env=${ROSA_ENVIRONMENT}

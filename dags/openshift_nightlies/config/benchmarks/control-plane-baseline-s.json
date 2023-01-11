@@ -3,20 +3,62 @@
         {
             "name": "node-density",
             "workload": "kube-burner",
-            "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp node-density --uuid=${UUID} --pods-per-node=245 --timeout=2h --pod-ready-threshold=5s --es-server=${ES_SERVER} --es-index=${ES_INDEX}"
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "node-density",
+                "PODS_PER_NODE": "245",
+                "NODE_COUNT": "24",
+                "JOB_TIMEOUT": "18000",
+                "QPS": "20",
+                "BURST": "20",
+                "STEP_SIZE": "30s",
+                "LOG_LEVEL": "info",
+                "CLEANUP_WHEN_FINISH": "true",
+                "CLEANUP": "true",
+                "MUST_GATHER_EACH_TASK": "true",
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+            }
         },
         {
             "name": "node-density-cni",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp node-density-cni --uuid=${UUID} --pods-per-node=245 --timeout=3h --es-server=${ES_SERVER} --es-index=${ES_INDEX}"
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "node-density-cni",
+                "PODS_PER_NODE": "245",
+                "NODE_COUNT": "24",
+                "JOB_TIMEOUT": "18000",
+                "QPS": "20",
+                "BURST": "20",
+                "STEP_SIZE": "30s",
+                "LOG_LEVEL": "info",
+                "CLEANUP_WHEN_FINISH": "true",
+                "CLEANUP": "true",
+                "MUST_GATHER_EACH_TASK": "true",
+                "CLEANUP_TIMEOUT": "1h",
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+            }
         },
         {
             "name": "node-density-heavy",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp node-density-heavy --uuid=${UUID} --pods-per-node=245 --timeout=3h --es-server=${ES_SERVER} --es-index=${ES_INDEX}"
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "node-density-heavy",
+                "PODS_PER_NODE": "245",
+                "NODE_COUNT": "24",
+                "JOB_TIMEOUT": "18000",
+                "QPS": "20",
+                "BURST": "20",
+                "STEP_SIZE": "30s",
+                "LOG_LEVEL": "info",
+                "CLEANUP_WHEN_FINISH": "true",
+                "CLEANUP": "true",
+                "MUST_GATHER_EACH_TASK": "true",
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+            }
         },
         {
             "name": "cluster-density",
@@ -46,7 +88,7 @@
             "name": "cluster-density-v2",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=1000 --timeout=3h --es-server=${ES_SERVER} --es-index=${ES_INDEX}"
+            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=1000 --timeout=3h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner"
         }
     ]
 }
