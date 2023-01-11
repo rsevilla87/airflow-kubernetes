@@ -50,7 +50,7 @@ class PlatformConnectorTask():
         return BashOperator(
             task_id=f"{task_prefix if self.task_group != '' else ''}connect-to-platform",
             depends_on_past=False,
-            bash_command=f"{constants.root_dag_dir}/scripts/utils/connect_to_platform.sh ",
+            bash_command=f"",
             retries=3,
             dag=self.dag,
             env=self.env,
