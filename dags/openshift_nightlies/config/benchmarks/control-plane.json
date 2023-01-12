@@ -17,7 +17,7 @@
             "env": {
                 "WORKLOAD": "node-density",
                 "PODS_PER_NODE": "245",
-                "NODE_COUNT": "27",
+                "NODE_COUNT": "24",
                 "JOB_TIMEOUT": "18000",
                 "QPS": "20",
                 "BURST": "20",
