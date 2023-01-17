@@ -6,7 +6,8 @@
             "command": "./run.sh",
             "env": {
                 "WORKLOAD": "hostnet",
-                "PAIRS": "1"
+                "PAIRS": "1",
+                "METADATA_COLLECTION": "false"
             }
         },
         {
@@ -14,7 +15,8 @@
             "workload": "network-perf",
             "command": "./run.sh",
             "env": {
-                "WORKLOAD": "pod2pod"
+                "WORKLOAD": "pod2pod",
+                "METADATA_COLLECTION": "false"
             }
         },
         {
@@ -22,30 +24,8 @@
             "workload": "network-perf",
             "command": "./run.sh",
             "env": {
-                "WORKLOAD": "pod2svc"
-            }
-        },
-        {
-            "name": "scale-27",
-            "workload": "scale-perf",
-            "command": "./run_scale_fromgit.sh",
-            "env": {
-                "SCALE": "27",
-                "METADATA_COLLECTION": "true",
-                "WORKLOAD_NODE_ROLE": "workload"
-            }
-        },
-        {
-            "name": "router",
-            "workload": "router-perf-v2",
-            "command": "./ingress-performance.sh",
-            "env": {
-                "LARGE_SCALE_THRESHOLD": "19",
-                "ENGINE": "local",
-                "LARGE_SCALE_ROUTES": "500",
-                "COMPARE": "false",
-                "EMAIL_ID_FOR_RESULTS_SHEET": "msheth@redhat.com",
-                "GSHEET_KEY_LOCATION": "/tmp/key.json"
+                "WORKLOAD": "pod2svc",
+                "METADATA_COLLECTION": "false"
             }
         }
     ]

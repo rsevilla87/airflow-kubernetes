@@ -29,6 +29,16 @@ dagConfig:
 platforms:
 
   # Do not program concurrent builds of ROSA/ROGCP/ARO
+  cloud:
+    versions: ["4.12"]
+    providers: ["aws"]
+    variants:
+      - name: sdn-data-plane
+        schedule: "10 12 * * 3"
+        config:
+          install: sdn-dp.json
+          benchmarks: data-plane.json
+
   rosa:
     versions: ["4.12"]
     variants:
