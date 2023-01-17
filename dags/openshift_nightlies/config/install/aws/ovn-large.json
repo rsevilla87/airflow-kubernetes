@@ -26,9 +26,9 @@
     "openshift_workload_node_volume_type": "gp3",
     "openshift_workload_node_volume_iops": 0,
     "openshift_prometheus_retention_period": "15d",
-    "openshift_prometheus_storage_class": "gp2",
+    "openshift_prometheus_storage_class": "gp3-csi",
     "openshift_prometheus_storage_size": "250Gi",
-    "openshift_alertmanager_storage_class": "gp2",
+    "openshift_alertmanager_storage_class": "gp3-csi",
     "openshift_alertmanager_storage_size": "2Gi",
     "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.12.0-rc.8-x86_64"
  }
