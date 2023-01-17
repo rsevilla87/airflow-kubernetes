@@ -33,12 +33,21 @@ platforms:
     versions: ["4.12"]
     providers: ["aws"]
     variants:
-      - name: sdn-data-plane
+      - name: small-control-plane
         schedule: "10 12 * * 3"
         config:
-          install: sdn-dp.json
-          benchmarks: data-plane.json
-
+          install: ovn-small.json
+          benchmarks: small-control-plane.json
+      - name: medium-control-plane
+        schedule: "10 12 * * 3"
+        config:
+          install: ovn-medium.json
+          benchmarks: medium-control-plane.json
+      - name: large-control-plane
+        schedule: "10 12 * * 3"
+        config:
+          install: ovn-large.json
+          benchmarks: large-control-plane.json
   rosa:
     versions: ["4.12"]
     variants:
