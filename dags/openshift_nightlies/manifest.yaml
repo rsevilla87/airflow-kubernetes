@@ -49,7 +49,7 @@ platforms:
           install: ovn-large.json
           benchmarks: large-control-plane.json
   rosa:
-    versions: ["4.12"]
+    versions: ["4.11", "4.12"]
     variants:
       - name: ovn-control-plane-s
         schedule: "10 12 * * 3"
