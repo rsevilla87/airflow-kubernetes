@@ -1,0 +1,23 @@
+{
+    "benchmarks": [
+        {
+            "name": "cluster-density-v2",
+            "workload": "kube-burner",
+            "trigger_rule": "all_done",
+            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=500 --timeout=5h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --gc=false"
+        },
+        {
+            "name": "upgrades",
+            "workload": "upgrade-perf",
+            "command": "./run_upgrade_fromgit.sh",
+            "env": {
+                "LATEST": "true",
+                "ROSA_VERSION_CHANNEL": "candidate",
+                "TIMEOUT": "400",
+                "POLL_INTERVAL": "10",
+                "ES_INDEX": "managedservices-timings"
+            },
+            "executor_image": "airflow-managed-services"
+        }
+    ]
+}

@@ -71,3 +71,13 @@ platforms:
         config:
           install: rosa/ovn-xl.json
           benchmarks: control-plane-baseline-xl.json
+      - name: ovn-upgrade-24
+        schedule: "10 12 * * 3"
+        config:
+          install: rosa/upgrade-s.json
+          benchmarks: upgrade-24.json
+      - name: ovn-upgrade-250
+        schedule: "10 12 * * 3"
+        config:
+          install: rosa/upgrade-l.json
+          benchmarks: upgrade-250.json
