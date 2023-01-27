@@ -4,7 +4,7 @@
             "name": "cluster-density-v2",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=3000 --timeout=5h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --gc=false"
+            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=3000 --timeout=5h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --gc=false --churn=false"
         },
         {
             "name": "upgrades",
