@@ -10,6 +10,7 @@
             "name": "upgrades",
             "workload": "upgrade-perf",
             "command": "./run_upgrade_fromgit.sh",
+            "trigger_rule": "all_done",
             "env": {
                 "LATEST": "true",
                 "ROSA_VERSION_CHANNEL": "candidate",
