@@ -30,7 +30,7 @@ platforms:
 
   # Do not program concurrent builds of ROSA/ROGCP/ARO
   cloud:
-    versions: ["4.12"]
+    versions: ["4.11", "4.12"]
     providers: ["aws"]
     variants:
       - name: small-control-plane
@@ -48,6 +48,11 @@ platforms:
         config:
           install: ovn-large.json
           benchmarks: large-control-plane.json
+      - name: selfm-upgrade-250
+        schedule: "10 12 * * 3"
+        config:
+          install: ovn-large.json
+          benchmarks: upgrade-250.json
   rosa:
     versions: ["4.11", "4.12"]
     variants:
