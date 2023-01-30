@@ -1,10 +1,28 @@
 {
     "benchmarks": [
         {
-            "name": "cluster-density-v2",
+            "name": "cluster-density",
             "workload": "kube-burner",
             "trigger_rule": "all_done",
-            "custom_cmd": "kube-burner ocp cluster-density --uuid=${UUID} --iterations=3000 --timeout=5h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --gc=false --churn=false"
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "cluster-density",
+                "JOB_ITERATIONS": "4000",
+                "JOB_TIMEOUT": "18000",
+                "STEP_SIZE": "30s",
+                "QPS": "20",
+                "BURST": "20",
+                "LOG_LEVEL": "info",
+                "PLATFORM_ALERTS": "false",
+                "CLEANUP_WHEN_FINISH": "false",
+                "CLEANUP": "true",
+                "CHURN": "false",
+                "CHURN_DURATION": "1h",
+                "CHURN_DELAY": "2m",
+                "CHURN_PERCENT": "10",
+                "MUST_GATHER_EACH_TASK": "true",
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+            }
         },
         {
             "name": "upgrades",

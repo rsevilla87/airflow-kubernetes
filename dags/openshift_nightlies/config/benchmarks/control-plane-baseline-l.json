@@ -13,7 +13,7 @@
             "command": "./run.sh",
             "env": {
                 "WORKLOAD": "cluster-density",
-                "JOB_ITERATIONS": "1000",
+                "JOB_ITERATIONS": "4000",
                 "JOB_TIMEOUT": "18000",
                 "STEP_SIZE": "30s",
                 "QPS": "20",
