@@ -86,3 +86,8 @@ platforms:
         config:
           install: rosa/upgrade-l.json
           benchmarks: upgrade-250.json
+      - name: ovn-upgrade-120
+        schedule: "10 12 * * 3"
+        config:
+          install: rosa/upgrade-m.json
+          benchmarks: upgrade-120.json
