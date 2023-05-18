@@ -42,9 +42,9 @@ class Diagnosis():
             task_id=task_id,
             depends_on_past=False,
             bash_command=f"{constants.root_dag_dir}/scripts/utils/run_scale_ci_diagnosis.sh -w {self.vars['workload']} -c {self.vars['command']} ",
-            retries=3,
+            retries=0,
             dag=self.dag,
             env=env,
             executor_config=self.exec_config,
-            trigger_rule="one_failed"
+            trigger_rule="one_success"
         )
