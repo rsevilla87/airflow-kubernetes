@@ -52,3 +52,7 @@ platforms:
       config:
         install: ovn-dp-v2.json
         benchmarks: data-plane-v2.json
+    - name: ovn-data-plane
+      config:
+        install: ovn-dp.json
+        benchmarks: data-plane.json
