@@ -24,6 +24,6 @@
     "openshift_prometheus_storage_size": "250Gi",
     "openshift_alertmanager_storage_class": "gp3-csi",
     "openshift_alertmanager_storage_size": "2Gi",
-    "openshift_install_release_image_override": "registry.ci.openshift.org/ocp/release:4.10.0-0.nightly-2023-06-25-172036",
+    "openshift_install_release_image_override": "registry.ci.openshift.org/ocp/release:4.12.0-0.nightly-2023-06-26-100619",
     "fips": true
  }
