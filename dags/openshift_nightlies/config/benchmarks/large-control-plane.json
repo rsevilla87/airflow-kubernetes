@@ -13,7 +13,7 @@
         {
             "name": "node-density",
             "workload": "kube-burner",
-            "custom_cmd": "kube-burner ocp node-density --uuid=${UUID} --pods-per-node=245 --timeout=4h --pod-ready-threshold=10s --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner"
+            "custom_cmd": "kube-burner ocp node-density --uuid=${UUID} --pods-per-node=245 --timeout=4h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --reporting"
         },
         {
             "name": "cluster-density-v2",
