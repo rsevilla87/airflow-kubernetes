@@ -28,6 +28,5 @@
     "openshift_workload_node_volume_type": "gp3",
     "openshift_workload_node_volume_iops": 0,
     "openshift_toggle_workload_node": false,
-    "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.11.0-assembly.art6883-x86_64",
-    "fips": true
+    "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.11.0-assembly.art6883-x86_64"
  }
