@@ -24,6 +24,6 @@
     "openshift_prometheus_storage_size": "250Gi",
     "openshift_alertmanager_storage_class": "gp2",
     "openshift_alertmanager_storage_size": "2Gi",
-    "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.7.60-x86_64",
+    "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.7.60-assembly.art7277-x86_64",
     "fips": true
  }
