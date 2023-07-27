@@ -8,7 +8,7 @@
     "openshift_master_instance_type": "r5.xlarge",
     "openshift_worker_instance_type": "m5.2xlarge",
     "machineset_metadata_label_prefix": "machine.openshift.io",
-    "openshift_infra_node_instance_type": "c6i.8xlarge",
+    "openshift_infra_node_instance_type": "c6i.12xlarge",
     "openshift_prometheus_retention_period": "15d",
     "openshift_prometheus_storage_class": "gp3-csi",
     "openshift_prometheus_storage_size": "50Gi",
