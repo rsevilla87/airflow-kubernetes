@@ -1,21 +1,6 @@
 {
     "benchmarks": [
         {
-            "name": "network-smoke",
-            "workload": "network-perf-v2",
-            "command": "./run.sh",
-            "env": {
-            }
-        },
-        {
-            "name": "network-test",
-            "workload": "network-perf-v2",
-            "command": "./run.sh",
-            "env": {
-                "WORKLOAD": "full-run.yaml"
-            }
-        },
-        {
             "name": "ingress-perf",
             "workload": "ingress-perf",
             "command": "./run.sh",
