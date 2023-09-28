@@ -23,6 +23,5 @@
     "openshift_prometheus_storage_size": "50Gi",
     "openshift_alertmanager_storage_class": "gp3-csi",
     "openshift_alertmanager_storage_size": "2Gi",
-    "openshift_toggle_workload_node": false,
-    "openshift_install_release_image_override": "quay.io/openshift-release-dev/ocp-release:4.14.0-ec.4-x86_64"
+    "openshift_toggle_workload_node": false
 }
