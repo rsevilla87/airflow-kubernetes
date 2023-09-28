@@ -25,7 +25,7 @@ dagConfig:
   dependencies:
     e2e_benchmarking:
       repo: https://github.com/rsevilla87/e2e-benchmarking.git
-      branch: master
+      branch: OCPBUGS-18011
 
 platforms:
   cloud:
